@@ -32,7 +32,7 @@ function createdb(){
                 firstName VARCHAR(25)   NOT NULL,
                 lastName VARCHAR(20),
                 phoneNumber VARCHAR(20),
-                dateOfBirth VARCHAR(20)
+                dateOfBirth DATE NOT NULL
             );
 
         ";

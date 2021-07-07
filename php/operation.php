@@ -1,7 +1,7 @@
 <?php
 
 require_once("db.php");
-require_once("component.php");
+
 
 $con = Createdb();
 
@@ -32,8 +32,11 @@ function createData(){
     
 
     if($firstName && $dateOfBirth && $idNumber){
+        
+       
         $sql = "INSERT INTO customers(id, firstName, lastName,  phoneNumber, dateOfBirth)
                 VALUES('$idNumber', '$firstName','$lastName', '$phoneNumber', '$dateOfBirth')";
+            
 
         if(mysqli_query($GLOBALS['con'], $sql)){
             TextNode("Success", "Record Successfully inserted...!");
@@ -41,6 +44,8 @@ function createData(){
         }else{
             echo "Error";
         }
+
+
     }else {
        TextNode("error", "Provide data in the text box");
     }

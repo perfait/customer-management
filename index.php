@@ -1,6 +1,5 @@
 <?php
 
-require_once ("php/component.php");
 require_once ("php/operation.php");
 ?>
 
@@ -34,19 +33,19 @@ require_once ("php/operation.php");
 <form action="" method="post" class="w-50">
 
 <div class="form-group">
-  <label for="team">First Name:</label>
+  <label for="firstName">First Name:</label>
   <input type="text" class="form-control" name="firstName" required>
 
-  <label for="team">Last Name:</label>
+  <label for="lastName">Last Name:</label>
   <input type="text" class="form-control" name="lastName">
 
-  <label for="team">Date Of Birth:</label>
-  <input type="text" class="form-control" name="dateOfBirth" required>
+  <label for="dateOfBirth">Date Of Birth:</label>
+  <input type="date" class="form-control" name="dateOfBirth" required>
 
-  <label for="team">Id Number:</label>
+  <label for="idNumber">Id Number:</label>
   <input type="text" class="form-control" name="idNumber" required>
 
-  <label for="team">Phone Number:</label>
+  <label for="phoneNumber">Phone Number:</label>
   <input type="text" class="form-control" name="phoneNumber" required>
 </div>
 
