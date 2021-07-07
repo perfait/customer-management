@@ -1,0 +1,1 @@
+The sql scripts for the database are inside the code and will create a db automatically
