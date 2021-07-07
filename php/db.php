@@ -27,8 +27,9 @@ function createdb(){
         $con = mysqli_connect($servername, $username, $password, $dbname);
 
         $sql="
+            
             CREATE TABLE IF NOT EXISTS customers(
-                id INT(8)NOT NULL PRIMARY KEY,
+                id VARCHAR(8)NOT NULL PRIMARY KEY,
                 firstName VARCHAR(25)   NOT NULL,
                 lastName VARCHAR(20),
                 phoneNumber VARCHAR(20),

@@ -8,8 +8,9 @@ $con = Createdb();
 //create button click
 
 if(isset($_POST['create'])){
-    createData();
+    createCustomers();
 }
+
 
 if(isset($_POST['update'])){
     UpdateData();
@@ -23,7 +24,8 @@ if(isset($_POST['deleteall'])){
     deleteAll();
 }
 
-function createData(){
+//create customers function
+function createCustomers(){
     $firstName = textboxValue("firstName");
     $lastName = textboxValue("lastName");
     $dateOfBirth = textboxValue("dateOfBirth");
@@ -51,6 +53,11 @@ function createData(){
     }
 }
 
+
+
+
+
+
 function textboxValue($value){
     $textbox = mysqli_real_escape_string($GLOBALS['con'], trim($_POST[$value]));
     if(empty($textbox)){
@@ -71,7 +78,7 @@ function TextNode($classname, $msg){
 //get data from mysql database
 
 function getData(){
-    $sql="SELECT*FROM books";
+    $sql="SELECT*FROM customers";
 
     $result = mysqli_query($GLOBALS['con'],$sql);
 

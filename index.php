@@ -54,44 +54,56 @@ require_once ("php/operation.php");
 </form>
 </div>
 
+
     <!--Bootstrap table-->
-    <div class="d-flex table-data">
+    <div class="container text-center">
+    <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i>Customer list</h1>
+    <div class="d-flex justify-content-center pt-5">
+    <div class="d-flex table-data pt-5">
         <table class="table table-striped table-dark">
             <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
-                    <th>Book Name</th>
-                    <th>Publisher</th>
-                    <th>Book Price</th>
-                    <th>Edit</th>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Date of Birth</th>
+                    
                 </tr>
-            </thead>
-            <tbody id="tbody">
-            <?php
-                    if(isset($_POST['read'])){
+                </thead>
+
+                <tbody id="tbody">
+                                   
+                <?php
+                  
                         $result = getData();
 
                         if($result){
-                            while($row = mysqli_fetch_assoc($result)){?>
+                          $rank = 1;
+                            while($rank<=20 && $row = mysqli_fetch_assoc($result)){
+                                    echo "<td>" .$row['id']. "</td>";
+                                    echo "<td>" .$row['firstName']. "</td>";
+                                    echo "<td>" .$row['lastName']. "</td>";
+                                    echo "<td>" .$row['phoneNumber']. "</td>";
+                                    echo "<td>" .$row['dateOfBirth']. "</td>";
+   
+                                echo "</tr>";
+                                }
 
-                                <tr>
-                                    <td data-id="<?php echo $row['id'];?>"><?php echo $row['id'];?></td>
-                                    <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_name'];?></td>
-                                    <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_publisher'];?></td>
-                                    <td data-id="<?php echo $row['id'];?>"><?php echo "$".$row['book_price'];?></td>
-                                    <td><i class="fas fa-edit btnedit" data-id="<?php echo $row['id']; ?>"></i></td>
-                                </tr>
-
+                                ?>
                             <?php
-                            }
+                            
                         }
-                    }
+                    
                     
 
                 ?>
             </tbody>
-        </table>
-    </div>
+            
+          </table>
+        </div>
+
+
 </div>
 </main>
 
